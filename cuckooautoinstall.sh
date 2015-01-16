@@ -38,7 +38,7 @@ CODENAME=${CODENAME%%\)*}
 
 echo $OS $VER $ARCH $CODENAME
     
-if [ "debian" = $OS ];
+if [ "ubuntu" = $OS ];
 then
     echo Debian...
     
