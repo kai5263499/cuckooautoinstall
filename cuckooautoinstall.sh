@@ -47,7 +47,7 @@ then
         exit
     fi
 
-    sudo apt-get -y install python-pip python-sqlalchemy mongodb python-bson python-dpkt python-jinja2 python-magic python-gridfs python-libvirt python-bottle python-pefile python-chardet
+    sudo apt-get -y install python-pip python-sqlalchemy mongodb python-bson python-dpkt python-jinja2 python-magic python-gridfs python-libvirt python-bottle python-pefile python-chardet curl
     sudo pip install django
     sudo pip install pymongo -U
     sudo pip install elasticsearch
