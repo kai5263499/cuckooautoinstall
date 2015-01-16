@@ -50,6 +50,7 @@ then
     sudo apt-get -y install python-pip python-sqlalchemy mongodb python-bson python-dpkt python-jinja2 python-magic python-gridfs python-libvirt python-bottle python-pefile python-chardet
     sudo pip install django
     sudo pip install pymongo -U
+    sudo pip install elasticsearch
     sudo apt-get -y install git
     sudo apt-get -y install build-essential
     sudo apt-get -y install autoconf automake libtool
@@ -129,6 +130,14 @@ then
     sudo apt-get -y install libcap2-bin 
     sudo setcap cap_net_raw,cap_net_admin=eip /usr/sbin/tcpdump
     #tcpdump end
+
+    #elasticsearch
+    wget -qO - https://packages.elasticsearch.org/GPG-KEY-elasticsearch | sudo apt-key add -
+    sudo add-apt-repository "deb http://packages.elasticsearch.org/elasticsearch/1.4/debian stable main"
+    sudo apt-get update && sudo apt-get install elasticsearch
+    sudo update-rc.d elasticsearch defaults 95 10
+    #elasticsearch end
+    
 
     #cuckoo
     git clone git://github.com/drainware/cuckooautoinstall.git
