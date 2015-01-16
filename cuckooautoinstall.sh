@@ -140,7 +140,8 @@ then
     
 
     #cuckoo
-    git clone git://github.com/drainware/cuckooautoinstall.git
+    git clone git://github.com/drainware/elastic-cuckoo.git
+    mv elastic-cuckoo cuckoo
     #cuckoo end
 
     #django fix
@@ -156,10 +157,10 @@ then
     #django fix end
 
     #enable mongodb
-    cat cuckoo/conf/reporting.conf | grep -A1 "\[mongodb\]" | cut -d# -f2 | grep "enabled = no" 
-    if [ $? -eq 0 ]; then
-        echo "Enabling mongodb in reporting.conf"
-        sed -i '/\[mongodb\]/{ N; s/.*/\[mongodb\]\nenabled = yes/; }' cuckoo/conf/reporting.conf
-    fi
+    #cat cuckoo/conf/reporting.conf | grep -A1 "\[mongodb\]" | cut -d# -f2 | grep "enabled = no" 
+    #if [ $? -eq 0 ]; then
+    #    echo "Enabling mongodb in reporting.conf"
+    #    sed -i '/\[mongodb\]/{ N; s/.*/\[mongodb\]\nenabled = yes/; }' cuckoo/conf/reporting.conf
+    #fi
     #enable mongodb end
 fi
