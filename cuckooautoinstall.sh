@@ -32,9 +32,7 @@ else
     VER=$(uname -r | tr '[:upper:]' '[:lower:]')
 fi
 
-CODENAME=`cat /etc/*-release | grep "VERSION=" | tr '[:upper:]' '[:lower:]'`
-CODENAME=${CODENAME##*\(}
-CODENAME=${CODENAME%%\)*}
+CODENAME=$(bash <(cat /etc/os-release; echo 'echo ${VERSION/*, /}') | tr '[:upper:]' '[:lower:]' | cut -d' ' -f 1)
 
 echo $OS $VER $ARCH $CODENAME
     
@@ -141,7 +139,7 @@ then
 
     #cuckoo
     git clone https://github.com/cuckoobox/cuckoo.git
-    git clone git://github.com/drainware/elastic-cuckoo.git
+    git clone https://github.com/drainware/elastic-cuckoo.git
     mv elastic-cuckoo cuckoo
     #cuckoo end
 
