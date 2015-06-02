@@ -131,7 +131,7 @@ then
     #tcpdump end
 
     #cuckoo
-    git clone git://github.com/cuckoobox/cuckoo.git
+    git clone https://github.com/cuckoobox/cuckoo.git
     #cuckoo end
 
     #django fix
