@@ -111,7 +111,7 @@ then
     wget -c https://www.virtualbox.org/download/oracle_vbox.asc
     sudo apt-key add oracle_vbox.asc
     sudo apt-get update
-    sudo apt-get -y install virtualbox-4.3
+    sudo apt-get -y install virtualbox
     sudo apt-get -y install dkms
 
     sudo vboxmanage hostonlyif create
